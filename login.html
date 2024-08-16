@@ -1,0 +1,104 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login & Signup</title>
+    <link rel="stylesheet" href="login.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <form action="https://sheetdb.io/api/v1/xsfxicchleocq" method="post" id="card1"   class="form">
+    <div class="hero">
+      <div class="form-box">
+        <div class="button-box">
+          <div id="btn"></div>
+          <button type="button" class="toggle-btn" onclick="login()">
+            Login
+          </button>
+          <button type="button" class="toggle-btn" onclick="signup()">
+            Signup
+          </button>
+        </div>
+        <div class="social-icons">
+          <img src="google.png" alt="facebook" />
+          <img src="facebook.png" alt="instagram" />
+          <img src="instagram.png" alt="twitter" />
+        </div>
+        <form id="login" class="input-group">
+          <input
+            type="text"
+            class="input-field"
+            placeholder="Username"
+            name="data[Fn]"
+            required
+          />
+          <input
+            type="password"
+            class="input-field"
+            placeholder="Password"
+            name="data[Pw]"
+            required
+          />
+          <input type="checkbox" class="check-box" /><span
+            >Remember Password</span
+          >
+          <button type="submit" class="submit-btn" onclick="login()">
+            Log in
+          </button>
+        </form>
+        <form id="signup" class="input-group">
+          <input
+            type="text"
+            class="input-field"
+            placeholder="Username"
+            name="data[Fn]"
+            required
+          />
+          <input
+            type="email"
+            class="input-field"
+            placeholder="Email Id"
+            name="data[Em]"
+            required
+          />
+          <input
+            type="password"
+            class="input-field"
+            placeholder="Password"
+            name="data[Pw]"
+            required
+          />
+          <input type="checkbox" class="check-box" /><span
+            >I agree to the terms & conditions</span
+          >
+          <button type="submit" class="submit-btn">
+            Signup
+          </button>
+        </form>
+      </div>
+    </div>
+  </form>
+  <script>
+    var form = document.getElementById('card1');
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  fetch(form.action, {
+      method : "POST",
+      body: new FormData(document.getElementById("card1")),
+  }).then(
+      response => response.json()
+  ).then((html) => {
+        // you can put any JS code here
+        window.open('page2 link to index index.html', '_blank');
+
+  });
+});
+</script>
+    <script src="login.js">
+      
+    </script>
+  </body>
+</html>
